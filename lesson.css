@@ -4,7 +4,7 @@
 /* extra fonts */
 @font-face {
 	font-family: "Source Sans Pro";
-	src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+	src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap')
 }
 
 
@@ -369,7 +369,7 @@ div.error {
 }
  .keypoints h3:before {
 	 font-family: 'bootstrap-icons';
-	 content: "\F1DE";
+	 content: "\f1de";
 	 float: left;
 	 color: #FFFFFF;
 	 padding-left: 5px;
@@ -396,7 +396,7 @@ div.error {
 }
  .objectives h3:before {
 	 font-family: 'bootstrap-icons';
-	 content: "\F47F";
+	 content: "\f47f";
 	 float: left;
 	 color: #000000;
 	 padding-left: 5px;
@@ -499,7 +499,7 @@ div.error {
 	 margin-left: -5px;
 }
  .solution h3:before {
-	 font-family: 'Glyphicons Halflings';
+	 font-family: 'bootstrap-icons';
 	 content: "\e105";
 	 float: left;
 	 padding-left: 5px;
