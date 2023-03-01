@@ -107,7 +107,8 @@ Enable GitHub pages in your repository settings:
 * Go to GitHub repository settings 
 * Scroll down to "GitHub Pages" section and select the following: 
     * `Source: deploy from a branch`
-    * `Branch:gh-pages`
+    * `Branch:main`
+      * `Directory: /root`
     * `Save`
 
 Run the quarto publish command (assuming you are working in terminal) 
