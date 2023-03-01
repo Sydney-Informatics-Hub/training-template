@@ -94,7 +94,33 @@ The building from Jupyter notebooks will NOT re-render all of the notebooks unle
 3. Add links to your content to the navigation configuration in `_quarto.yml`. For example, to link to the rendered page for `notebooks/1_cont.md`, add a link to `notebooks/1_cont.html` in `_quarto.yml`
 4. Type `quarto render` in the terminal - or use VSCode's "Render Quarto project' command using the command pallette instead.
 
+## Publish with GitHub pages
 
-***
+To publish Quarto websites to GitHub pages, you can:
+* Render sites on your local machine (see above)
+* Use the `quarto publish` command
+* Use [GitHub Actions](https://github.com/quarto-dev/quarto-actions)
 
+### Quarto publish command
+
+Enable GitHub pages in your repository settings:
+* Go to GitHub repository settings 
+* Scroll down to "GitHub Pages" section and select the following: 
+    * `Source: deploy from a branch`
+    * `Branch:gh-pages`
+    * `Save`
+
+Run the quarto publish command (assuming you are working in terminal) 
+```
+quarto publish
+```
+
+Your Quarto project will be rendered at a URL with this format:
+```html
+https://sydney-informatics-hub.github.io/<NAME-OF-YOUR-REPO>/
+```
+
+### GitHub Actions 
+TBC
+ 
 # Examples of template use, with GitHub actions
