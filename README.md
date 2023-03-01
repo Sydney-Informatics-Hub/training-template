@@ -118,7 +118,7 @@ quarto publish
 
 Your Quarto project will be rendered at a URL with this format:
 ```html
-https://sydney-informatics-hub.github.io/<NAME-OF-YOUR-REPO>/
+https://pages.github.sydney.edu.au/informatics/<NAME-OF-YOUR-REPO>/
 ```
 
 ### GitHub Actions 
