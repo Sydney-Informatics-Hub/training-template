@@ -51,7 +51,7 @@ All languages/sources:
 
 If you want to use the command line instead of VSCode/RStudio (as described below), run the below commands (after activating the correct Python environment, if needed) 
 
-```
+```bash
 quarto render
 # First time you create the file, add them to be tracked by github, e.g.
 git add docs/*
@@ -113,7 +113,7 @@ Enable GitHub pages in your repository settings:
     * `Save`
 
 Run the quarto publish command (assuming you are working in terminal) 
-```
+```bash
 quarto publish
 ```
 
