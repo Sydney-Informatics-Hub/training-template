@@ -18,8 +18,8 @@ To:
 - Keep the repo as lean as possible
 - Ensure as little unexpected behaviour as possible, please:
 
-1. Do not under any circumstances commit to the main branch without review by someone else
-2. Fork the repository, make and test changes, THEN put in a pull request
+1. Do not under any circumstances commit to the main branch without review by someone else;
+2. Fork the repository, make and test changes, then put in a pull request;
 3. Please do not add GitHub actions or other "enhacements" that only work for your favourite programming language or workflow, and/or require a lot of extra files to work.
 
 While GitHub actions seem like an amazing enhancement, we often develop materials that use custom libraries, renv or conda environments, docker builds etc.
@@ -29,7 +29,7 @@ So if you'd like to use actions: PLEASE:
 1. Create your custom training workshop repository for your content
 2. Delete what you don't need from this template
 3. Create your custom actions script
-4. Add a note to the bottom of this readme linking to your actions page, so others can use it as an example when creating training using a similar combination of environments and language - THIS REPO IS GENERIC BY DESIGN.
+4. Add a note to the bottom of this readme linking to your actions page, so others can use it as an example when creating training using a similar combination of environments and language.
 
 
 
@@ -73,13 +73,14 @@ You can browse the result locally by exploring the html files created (note: som
 
 Note:
 
-The building from Jupyter notebooks will NOT re-render all of the notebooks unless you use the `quarto render notebook.ipynb --execute` command
+Building from Jupyter notebooks will **not** re-render all of the notebooks unless you use the `quarto render notebook.ipynb --execute` command
 
 ### For R - main "content" in `qmd`
 
 - `.qmd` is called "Quarto Markdown", and basically works just like Rmd.
 - If using R, you will need rmarkdown, xml2 and X to have the notebooks generate properly and link out to the documentation, as specified in the `_quarto.yml` file.
 - Building from R will by default re-render all of the outputs.
+- Sometimes you have to delete everything in your cache :(
 
 
 1. Delete `notebooks/01a-fundamentals.ipynb`, `environment.yml` and `01c-exampleMDcontent.md`
@@ -123,5 +124,33 @@ https://pages.github.sydney.edu.au/informatics/<NAME-OF-YOUR-REPO>/
 
 ### GitHub Actions 
 TBC
+
+### Themes, Aesthetic and Branding
+
+If you'd like to use a more generic and possibly neutral theme, go to the `_quarto.yaml` and change the format section to:
+
+```yaml
+format:
+  html:
+   toc: true
+   theme:
+      light: flatly
+      dark: darkly
+   css: styles.scss
+   code-link: true
+   code-fold: false
+```
+
+If you'd like to use the USYD Masterbrand Ochre, go to the `_quarto.yaml` and change the format section to:
+
+```yaml
+format:
+  html:
+    theme: simplex
+    css: [lesson.css, bootstrap-icons.css]
+    toc: true
+    code-overflow: wrap
+    highlight-style: github
+```
  
 # Examples of template use, with GitHub actions
