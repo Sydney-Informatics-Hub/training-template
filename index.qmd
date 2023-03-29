@@ -16,8 +16,9 @@ Have a list of the people delivering the course if it is needed.
 However, this is subject to change so might be a good idea to not specifiy.
 
 Here's an example list.
+This is a good place to define what your preferred name is if you have one.
 
-* Nathaniel (Nate) Butterworth, nathaniel.butterworth@sydney.edu.au
+* Nathaniel (Nate) Butterworth
 * Darya Vanichkina
 * Kristian Maras
 
