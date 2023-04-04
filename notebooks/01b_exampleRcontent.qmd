@@ -1,5 +1,39 @@
 # Sample R lesson
 
+::: callout-tip
+## Challenge 1
+How can we make our lessons a bit more interactive??
+:::
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+Here's some markdown code showing how to use markdown to do cool things in our quarto markdowns.
+
+```markdown
+
+::: callout-tip
+## Challenge 1
+How can we make our lessons a bit more interactive??
+:::
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+We can take advantage of cool markdown!
+
+:::
+
+```
+
+:::
+
+You can define sections in your quarto using html.
+
+```html
+<div class="questions">
+</div>
+```
 
 <div class="questions">
 
