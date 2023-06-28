@@ -19,6 +19,7 @@ website:
           href: notebooks/01b_exampleRcontent.html
         - text: "Markdown from md example"
           href: notebooks/01c_exampleMDcontent.html
+  google-analytics: "G-TNWWV3HK57"
 
   body-footer: "All materials copyright Sydney Informatics Hub, University of Sydney"
 
