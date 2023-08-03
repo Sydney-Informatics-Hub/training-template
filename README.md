@@ -1,4 +1,4 @@
-# SIH Quarto Training template 
+# SIH Quarto Training template
 
 This repository can serve as a template for making training materials using [Quarto](https://quarto.org/) from:
 
@@ -31,11 +31,11 @@ So if you'd like to use actions:
 
 We recommend the following structure for all published content:
 
-- Store `index.qmd`, `setup.qmd` files in the root directory 
+- Store `index.qmd`, `setup.qmd` files in the root directory
 - Store notebooks (.ipynb), R files (as .qmd or .rmd), and markdown lessons (.qmd or .md) in the `notebooks` folder
-- Store figures in a `figs` folder 
+- Store figures in a `figs` folder
 
-## How to use this template 
+## How to use this template
 
 For all languages/sources:
 
@@ -46,7 +46,7 @@ For all languages/sources:
 5. Add additional `*.md` files to the root dir to have them converted to html files (and add them to `_quarto.yml` to make them navigable), if you'd like.
 6. Edit this Readme in your fork to reflect the content of your workshop.
 
-If you want to use the command line instead of VSCode/RStudio (as described below), run the below commands (after activating the correct Python environment, if needed) 
+If you want to use the command line instead of VSCode/RStudio (as described below), run the below commands (after activating the correct Python environment, if needed)
 
 ```bash
 quarto render
@@ -86,7 +86,7 @@ Building from Jupyter notebooks will **not** re-render all of the notebooks unle
 
 ### For markdown .md or .qmd
 
-1. Delete `notebooks/01a-fundamentals.ipynb`,`01b-exampleRcontent.qmd` and `environment.yml` 
+1. Delete `notebooks/01a-fundamentals.ipynb`,`01b-exampleRcontent.qmd` and `environment.yml`
 2. Create files in the `notebooks` folder (for example `notebooks/1_cont.md`). Have a look at what the syntax for Challenges, Objectives, Key Points and Questions is supported in `01c-exampleMDcontent.md`, and use similar syntax across other .md files where needed.
 3. Add links to your content to the navigation configuration in `_quarto.yml`. For example, to link to the rendered page for `notebooks/1_cont.md`, add a link to `notebooks/1_cont.html` in `_quarto.yml`
 4. Type `quarto render` in the terminal - or use VSCode's "Render Quarto project' command using the command pallette instead.
@@ -101,14 +101,14 @@ To publish Quarto websites to GitHub pages, you can:
 ### Quarto publish command
 
 Enable GitHub pages in your repository settings:
-* Go to GitHub repository settings 
-* Scroll down to "GitHub Pages" section and select the following: 
+* Go to GitHub repository settings
+* Scroll down to "GitHub Pages" section and select the following:
     * `Source: deploy from a branch`
     * `Branch:main`
       * `Directory: /root`
     * `Save`
 
-Run the quarto publish command (assuming you are working in terminal) 
+Run the quarto publish command (assuming you are working in terminal)
 ```bash
 quarto publish
 ```
@@ -118,8 +118,41 @@ Your Quarto project will be rendered at a URL with this format:
 https://pages.github.sydney.edu.au/informatics/<NAME-OF-YOUR-REPO>/
 ```
 
-### GitHub Actions 
-TBC
+### GitHub Actions
+
+Here are some example actions.
+
+#### Auto render and publish quarto
+Add this action to automatically `quarto render && quarto publish`. Only works well if your repo uses markdown files exclusively, cannot execute python/R code for example. In the current form, it expects "Github Pages" to be deployed on the `gh-pages` branch from `/(root)`, i.e. the [standard configuration](https://github.com/Sydney-Informatics-Hub/training-template/settings/pages).
+
+```
+# Example from https://github.com/quarto-dev/quarto-actions/blob/main/examples/quarto-publish-example.yml
+name: Quarto Publish
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+```
 
 ### Themes, Aesthetic and Branding
 
@@ -148,5 +181,5 @@ format:
     code-overflow: wrap
     highlight-style: github
 ```
- 
+
 ## Examples of template use, with GitHub actions
