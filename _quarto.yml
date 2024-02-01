@@ -34,7 +34,7 @@ format:
    theme:
       light: flatly
       dark: darkly
-   css: styles.scss
+   css: [lesson.css, bootstrap-icons.css]
    code-link: true
    code-fold: false
 
